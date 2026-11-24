@@ -1,0 +1,26 @@
+El proyecto se inicializo con el arquetipo oficial de Serenity BDD para
+Cucumber y Screenplay, y se configuro para Java 21, Maven y Chrome.
+
+RESULTADOS DE LA EJECUCION
+
+Se ejecuto el flujo E2E completo en SauceDemo con el usuario standard_user.
+La ejecucion finalizo satisfactoriamente: 1 escenario ejecutado, 1 aprobado,
+0 fallidos y 0 errores (BUILD SUCCESS).
+
+Se validaron los productos Sauce Labs Backpack y Sauce Labs Bike Light en el
+carrito y en el resumen de la orden. El subtotal fue $39.98 y el total con
+impuestos fue $43.18. Al finalizar la compra, la pagina mostro el mensaje
+"Thank you for your order!".
+
+El reporte HTML generado por Serenity esta disponible en
+e2e-automation-serenity/Reports/target/site/serenity/index.html.
+
+El flujo E2E de SauceDemo separa las responsabilidades entre Tasks para las
+acciones, Questions para consultar y validar el estado de la pagina, y
+SauceDemoUI para centralizar los localizadores. El escenario cubre inicio de
+sesion, seleccion de dos productos, validacion del carrito, datos de envio,
+revision del resumen, finalizacion de la compra y confirmacion.
+
+La compra valida que el subtotal de los productos sea $39.98, el total con
+impuestos sea $43.18 y que la pagina confirme "Thank you for your order!".
+Las evidencias HTML de la ejecucion se generan en target/site/serenity.
