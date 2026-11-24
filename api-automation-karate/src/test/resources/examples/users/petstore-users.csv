@@ -1,0 +1,5 @@
+id,username,firstName,lastName,email,password,phone,userStatus,updatedFirstName,updatedEmail
+1,KarateUser1,Test,Automation,karate.user@example.com,Test123456,0999999999,1,Karate User Updated,karate.user.updated@example.com
+2,DanielaLopez,Daniela,Lopez,daniela.lopez@example.com,Daniela123,0987654321,1,Daniela Actualizada,daniela.actualizada@example.com
+3,CarlosMendez,Carlos,Mendez,carlos.mendez@example.com,Carlos123,0976543210,1,Carlos Actualizado,carlos.actualizado@example.com
+4,SofiaRamirez,Sofia,Ramirez,sofia.ramirez@example.com,Sofia123,0965432109,1,Sofia Actualizada,sofia.actualizada@example.com

@@ -1,1 +1,36 @@
-﻿# PracticoApiE2E-automation
+﻿# EJERCICIO: AUTOMATIZACION DE USUARIOS CON KARATE
+Repositorio: https://github.com/ymorales1509/PracticoApiE2E-automation
+
+Requisitos
+- Java 21
+- Maven
+- Conexion a Internet
+
+Escenarios automatizados
+El archivo petstore-user.feature contiene los siguientes casos para la API
+https://petstore.swagger.io/v2:
+1. Crear un usuario mediante POST /user.
+2. Buscar el usuario creado mediante GET /user/{username}.
+3. Actualizar su nombre y correo mediante PUT /user/{username}.
+4. Buscar el usuario actualizado y validar los nuevos datos.
+5. Eliminar el usuario mediante DELETE /user/{username} y comprobar que ya no
+   se encuentra disponible.
+
+Cada escenario genera un username unico y prepara sus propios datos, por lo
+que se pueden ejecutar individualmente. En los escenarios de actualizacion,
+consulta y eliminacion se crea primero el usuario que se necesita.
+
+Ejecucion
+Desde la carpeta raiz del proyecto, ejecutar:
+
+    mvn test -Dtest=PetstoreUserTest
+
+Para ejecutarlo desde IntelliJ IDEA, agrega `pom.xml` como proyecto Maven
+(ventana Maven > Add Maven Project) y recarga el proyecto. Cuando Maven termine
+de resolver las dependencias, IntelliJ reconocerá `PetstoreUserTest` como test.
+
+
+Petstore es un servicio publico de demostracion: su disponibilidad y la
+persistencia de los datos pueden variar. Por esta razon, un fallo de red o del
+servicio puede afectar la ejecucion aunque las validaciones del feature sean
+correctas.
