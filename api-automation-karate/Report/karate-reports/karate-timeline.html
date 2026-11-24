@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"examples/users/petstore-user[1.1:66]","start":1795554609818,"end":1795554612089,"title":"examples/users/petstore-user[1.1:66] 16:10:09.818-16:10:12.089 Crear, consultar, actualizar y eliminar usuario KarateUser1"},{"id":2,"group":1,"content":"examples/users/petstore-user[1.2:66]","start":1795554612100,"end":1795554613795,"title":"examples/users/petstore-user[1.2:66] 16:10:12.100-16:10:13.795 Crear, consultar, actualizar y eliminar usuario DanielaLopez"},{"id":3,"group":1,"content":"examples/users/petstore-user[1.3:66]","start":1795554613802,"end":1795554615511,"title":"examples/users/petstore-user[1.3:66] 16:10:13.802-16:10:15.511 Crear, consultar, actualizar y eliminar usuario CarlosMendez"},{"id":4,"group":1,"content":"examples/users/petstore-user[1.4:66]","start":1795554615518,"end":1795554617215,"title":"examples/users/petstore-user[1.4:66] 16:10:15.518-16:10:17.215 Crear, consultar, actualizar y eliminar usuario SofiaRamirez"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
