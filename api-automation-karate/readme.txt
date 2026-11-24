@@ -1,33 +1,48 @@
 EJERCICIO: AUTOMATIZACION DE USUARIOS CON KARATE
 
-Requisitos
-- Java 21
-- Maven
-- Conexion a Internet
+Requisitos previos
+- Java 21 configurado en JAVA_HOME.
+- Maven instalado y disponible en PATH.
+- Conexion a Internet para acceder a https://petstore.swagger.io/v2.
 
-Escenarios automatizados
-El archivo petstore-user.feature contiene un Scenario Outline que ejecuta el
-ciclo CRUD completo contra la API https://petstore.swagger.io/v2 para cada
-usuario definido en src/test/resources/examples/users/petstore-users.csv:
-1. Crear un usuario mediante POST /user.
-2. Buscar el usuario creado mediante GET /user/{username}.
+Datos y escenarios
+El Scenario Outline del archivo
+src/test/resources/examples/users/petstore-user.feature ejecuta el ciclo CRUD
+para cada usuario de src/test/resources/examples/users/petstore-users.csv.
+Cada fila contiene los datos de creacion y los valores esperados despues de
+actualizar el nombre y el correo. Para cada usuario se realizan estas
+operaciones:
+1. Crear el usuario mediante POST /user.
+2. Consultarlo mediante GET /user/{username} y validar sus datos.
 3. Actualizar su nombre y correo mediante PUT /user/{username}.
-4. Buscar el usuario actualizado y validar los nuevos datos.
-5. Eliminar el usuario mediante DELETE /user/{username} y comprobar que ya no
-   se encuentra disponible.
+4. Consultarlo nuevamente y validar los valores actualizados.
+5. Eliminarlo mediante DELETE /user/{username}.
+6. Consultarlo despues de la eliminacion y validar HTTP 404.
 
-El CSV incluye los datos originales y los valores esperados tras la
-actualizacion. Cada fila representa un usuario independiente para el ciclo
-completo.
+Pasos de ejecucion
+1. Abrir una terminal en la carpeta api-automation-karate, donde se encuentra
+   el archivo pom.xml.
+2. Verificar las versiones instaladas:
 
-Ejecucion
-Desde la carpeta raiz del proyecto, ejecutar:
+       java -version
+       mvn -version
 
-    mvn test -Dtest=PetstoreUserTest
+3. Ejecutar los escenarios parametrizados:
 
-Tambien se puede ejecutar la clase PetstoreUserTest desde IntelliJ IDEA.
-Los reportes de Karate se generan en la carpeta Report dentro de
-api-automation-karate.
+       mvn test -Dtest=PetstoreUserTest
+
+4. Confirmar en la salida de Maven que el BUILD finalice correctamente y que
+   los escenarios esten aprobados.
+5. Abrir en un navegador el reporte HTML generado en:
+
+       Report/karate-reports/karate-summary.html
+
+   El reporte detallado del feature se encuentra en:
+
+       Report/karate-reports/examples.users.petstore-user.html
+
+Tambien se puede ejecutar la clase PetstoreUserTest desde IntelliJ IDEA. Los
+reportes de Karate se guardan en la carpeta Report del proyecto.
 
 Conclusiones
 Karate permite describir en Gherkin las solicitudes REST y validar sus

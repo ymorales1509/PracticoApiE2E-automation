@@ -1,7 +1,21 @@
-Se implementó un Scenario Outline parametrizado mediante el archivo
-petstore-users.csv para validar el ciclo de vida completo de un usuario:
-creación, consulta, actualización del nombre y correo, nueva consulta y
-eliminación. Los datos de cada fila del CSV se mantienen durante todas las
-operaciones CRUD, garantizando la continuidad necesaria para validar el
-recurso. Adicionalmente, después de eliminarlo se realiza una consulta para
-verificar que el usuario ya no se encuentra disponible.
+RESULTADOS DE LA EJECUCIÓN
+
+Se ejecutaron satisfactoriamente cuatro escenarios parametrizados mediante
+el archivo petstore-users.csv, realizando un total de 24 peticiones REST
+(seis por usuario). El resultado fue 100 % de éxito, sin escenarios fallidos.
+
+Se verificó la creación, consulta, actualización y eliminación de los cuatro
+usuarios, validando los códigos de respuesta HTTP y la integridad de los
+datos enviados y recuperados antes y después de la actualización.
+
+Adicionalmente, se comprobó que los usuarios eliminados ya no se encontraban
+disponibles mediante una consulta posterior que retornó el código HTTP 404.
+
+Las evidencias de la ejecución se encuentran en los reportes HTML de Karate:
+Report/karate-reports/karate-summary.html y
+Report/karate-reports/examples.users.petstore-user.html.
+
+El uso de un Scenario Outline con datos de un CSV permite reutilizar el mismo
+flujo para distintos usuarios y mantener la continuidad de sus datos durante
+todas las operaciones CRUD. La ejecución depende de la disponibilidad de la
+API pública de demostración Petstore y de la conexión a Internet.
