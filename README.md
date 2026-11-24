@@ -25,7 +25,9 @@ Desde la carpeta raiz del proyecto, ejecutar:
 
     mvn test -Dtest=PetstoreUserTest
 
-Tambien se puede ejecutar la clase PetstoreUserTest desde IntelliJ IDEA.
+Para ejecutarlo desde IntelliJ IDEA, agrega `pom.xml` como proyecto Maven
+(ventana Maven > Add Maven Project) y recarga el proyecto. Cuando Maven termine
+de resolver las dependencias, IntelliJ reconocerá `PetstoreUserTest` como test.
 
 
 Petstore es un servicio publico de demostracion: su disponibilidad y la
