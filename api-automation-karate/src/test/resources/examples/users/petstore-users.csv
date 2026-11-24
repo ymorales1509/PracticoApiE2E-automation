@@ -1,0 +1,2 @@
+id,username,firstName,lastName,email,password,phone,userStatus,updatedFirstName,updatedEmail
+1,KarateUser1,Test,Automation,karate.user@example.com,Test123456,0999999999,1,Karate User Updated,karate.user.updated@example.com

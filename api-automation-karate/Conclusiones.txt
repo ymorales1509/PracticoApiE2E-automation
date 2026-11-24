@@ -1,0 +1,7 @@
+Se implementó un Scenario Outline parametrizado mediante el archivo
+petstore-users.csv para validar el ciclo de vida completo de un usuario:
+creación, consulta, actualización del nombre y correo, nueva consulta y
+eliminación. Los datos de cada fila del CSV se mantienen durante todas las
+operaciones CRUD, garantizando la continuidad necesaria para validar el
+recurso. Adicionalmente, después de eliminarlo se realiza una consulta para
+verificar que el usuario ya no se encuentra disponible.
